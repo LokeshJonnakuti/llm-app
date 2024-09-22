@@ -47,7 +47,7 @@ if prompt := st.chat_input("How can I help you today?"):
     url = f"http://{api_host}:{api_port}/"
     data = {"query": prompt, "user": "user"}
 
-    response = requests.post(url, json=data)
+    response = requests.post(url, json=data, timeout=60)
 
     if response.status_code == 200:
         response = response.json()

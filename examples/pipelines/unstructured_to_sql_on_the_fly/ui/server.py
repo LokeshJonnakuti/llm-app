@@ -56,7 +56,7 @@ if question:
     url = f"http://{api_host}:{api_port}/"
     try:
         data = {"user": "user", "query": question}
-        response = requests.post(url, json=data)
+        response = requests.post(url, json=data, timeout=60)
 
         if response.status_code == 200:
             response_JSON = response.json()
